@@ -632,23 +632,67 @@ function getSubstring(string, length) {
 }
 
 /*============================ Задача-33 ==============================*/
-/*  */
+/* Задание
+Функция formatMessage(message, maxLength) принимает строку (параметр message) и форматирует её, если длина превышает значение в параметре maxLength.
+
+Дополни код функции так, что если длина строки:
+
+не превышает maxLength, функция возвращает её в исходном виде.
+больше maxLength, то функция обрезает строку до maxLength символов и добавляет в конец троеточие "...", после чего возвращает укороченную версию.
+Тесты */
 
 function formatMessage(message, maxLength) {
   let result;
   // Change code below this line
-  result = message.length < maxLength ? message : message.slice(0, maxLength) '...');
-  /*if (message.length <= maxLength) {
-    result = message;
-  }
-  else { result = message.slice(message[0], message[maxLength]), + "...";
-       }*/
+  result = message.length > maxLength ? message.slice(0, maxLength) + '...' : message;
 
   /// Change code above this line
   return result;
 }
 
 
-/*============================ Задача-1 ==============================*/
-/*============================ Задача-1 ==============================*/
+/*============================ Задача-34 ==============================*/
+/* Задание
+Функция normalizeInput(input) принимает строку (параметр input) и возвращает такую же строку, но в нижнем регистре. Присвой переменной normalizedInput выражение создания строки в нижнем регистре из параметра input. */
+
+function normalizeInput(input) {
+  const normalizedInput = input.toLowerCase(); // Change this line
+
+  return normalizedInput;
+}
+
+
+/*============================ Задача-35 ==============================*/
+/* Задание
+Функция checkName(fullname, name) принимает два параметра и возвращает буль true или false - результат проверки вхождения подстроки name в строку fullname.
+
+fullname - полное имя состоящее из двух слов (имени и фамилии) разделённых пробелом.
+name - имя для проверки вхождения в полное имя.
+Присвой переменной result выражение проверки вхождения имени (параметр name), в полное имя (параметр fullname). Пусть функция строго относится к регистру букв, то есть «Петя» и «петя» для неё разные имена.
+
+ */
+
+function checkForName(fullName, name) {
+ const result = fullName.includes(name); // Change this line
+  return result;
+}
+
+/*============================ Задача-36 ==============================*/
+/* Задание
+Функция checkForSpam(message) принимает строку (параметр message), проверяет её на содержание запрещенных слов spam и sale, и возвращает результат проверки. Слова в строке параметра message могут быть в произвольном регистре, например SPAM или sAlE.
+
+Если нашли запрещенное слово (spam или sale) то функция возвращает буль true.
+Если в строке нет запрещенных слов, функция возвращает буль false. */
+
+function checkForSpam(message) {
+  let result;
+  // Change code below this line
+  message = message.toLowerCase();
+   result = message.includes('spam') || message.includes('sale');
+
+  // Change code above this line
+  return result;
+}
+
+
 
