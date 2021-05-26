@@ -8,12 +8,12 @@ rating - рейтинг, значение 4;
 price - цена, значение 2153;
 tags - метаинформация, массив ["premium", "promoted", "top"]. */
 
-const apartment =  {
-imgUrl: "https://via.placeholder.com/640x480",
-descr: "Spacious apartment in the city center",
-rating: 4,
-price: 2153,
-tags: ["premium", "promoted", "top"],
+const apartment = {
+  imgUrl: "https://via.placeholder.com/640x480",
+  descr: "Spacious apartment in the city center",
+  rating: 4,
+  price: 2153,
+  tags: ["premium", "promoted", "top"],
 };
 
 /* ======================== Задача-2 ========================== */
@@ -25,17 +25,17 @@ phone - телефон, значение "982-126-1588";
 email - почта, значение "henry.carter@aptmail.com". */
 
 const apartment = {
-    imgUrl: 'https://via.placeholder.com/640x480',
-    descr: 'Spacious apartment in the city center',
+  imgUrl: 'https://via.placeholder.com/640x480',
+  descr: 'Spacious apartment in the city center',
   owner: {
-name: "Henry",
-phone: "982-126-1588",
-email: "henry.carter@aptmail.com",
+    name: "Henry",
+    phone: "982-126-1588",
+    email: "henry.carter@aptmail.com",
   },
-    rating: 4,
-    price: 2153,
-    tags: ['premium', 'promoted', 'top'],
-  };
+  rating: 4,
+  price: 2153,
+  tags: ['premium', 'promoted', 'top'],
+};
 
 /* ======================== Задача-3 ========================== */
 /* Задание
@@ -47,19 +47,19 @@ aptPrice - цена;
 aptTags - теги. */
 
 const apartment = {
-    imgUrl: 'https://via.placeholder.com/640x480',
-    descr: 'Spacious apartment in the city centre',
-    rating: 4,
-    price: 2153,
-    tags: ['premium', 'promoted', 'top'],
-  };
-  
-  // Change code below this line
-  const aptRating = apartment.rating;
-  const aptDescr = apartment.descr;
-  const aptPrice = apartment.price;
-  const aptTags = apartment.tags;
-  // Change code above this line
+  imgUrl: 'https://via.placeholder.com/640x480',
+  descr: 'Spacious apartment in the city centre',
+  rating: 4,
+  price: 2153,
+  tags: ['premium', 'promoted', 'top'],
+};
+
+// Change code below this line
+const aptRating = apartment.rating;
+const aptDescr = apartment.descr;
+const aptPrice = apartment.price;
+const aptTags = apartment.tags;
+// Change code above this line
 
 /* ======================== Задача-4 ========================== */
 /* Задание
@@ -190,7 +190,7 @@ const product = {
   // Change code below this line
 
   name,
-    price,
+  price,
   image,
   tags,
 
@@ -211,8 +211,8 @@ const credentials = {
   // Change code below this line
   [emailInputName]: "henry.carter@aptmail.com",
   [passwordInputName]: "jqueryismyjam",
-  
-  
+
+
   // Change code above this line
 };
 
@@ -229,7 +229,7 @@ const keys = [];
 const values = [];
 // Change code below this line
 for (const key in apartment) {
-keys.push(key);
+  keys.push(key);
   values.push(apartment[key]);
 }
 
@@ -249,11 +249,11 @@ apartment.price = 2153;
 
 for (const key in apartment) {
   // Change code below this line
-if (apartment.hasOwnProperty(key)) {
-keys.push(key);
-  values.push(apartment[key]);
-}
-  
+  if (apartment.hasOwnProperty(key)) {
+    keys.push(key);
+    values.push(apartment[key]);
+  }
+
 
   // Change code above this line
 }
@@ -266,11 +266,11 @@ keys.push(key);
 function countProps(object) {
   let propCount = 0;
   // Change code below this line
-for (const key in object) {
-	if (object.hasOwnProperty(key)) {
-    	propCount += 1;
+  for (const key in object) {
+    if (object.hasOwnProperty(key)) {
+      propCount += 1;
     }
-}
+  }
   // Change code above this line
   return propCount;
 }
@@ -290,7 +290,7 @@ const values = [];
 // Change code below this line
 const keys = Object.keys(apartment);
 for (const key of keys) {
-	
+
   values.push(apartment[key]);
 }
 
@@ -302,11 +302,11 @@ for (const key of keys) {
 function countProps(object) {
   // Change code below this line
   let propCount = 0;
-const keys = Object.keys(object);
+  const keys = Object.keys(object);
   for (const key of keys) {
-    
-      propCount += 1;
-    
+
+    propCount += 1;
+
   }
 
   return propCount;
@@ -336,9 +336,9 @@ function countTotalSalary(salaries) {
   let totalSalary = 0;
   // Change code below this line
   const values = Object.values(salaries);
-for (const value of values) {
-	totalSalary += value;
-}
+  for (const value of values) {
+    totalSalary += value;
+  }
   // Change code above this line
   return totalSalary;
 }
@@ -359,7 +359,7 @@ const hexColors = [];
 const rgbColors = [];
 // Change code below this line
 for (const color of colors) {
-	hexColors.push(color['hex']);
+  hexColors.push(color['hex']);
   rgbColors.push(color['rgb']);
 }
 
@@ -379,13 +379,13 @@ const products = [
 function getProductPrice(productName) {
   // Change code below this line
   for (const product of products) {
-  	if (product.name === productName) {
-    	return product.price;
+    if (product.name === productName) {
+      return product.price;
     }
-    
+
   }
   return null;
-  
+
   // Change code above this line
 }
 
@@ -405,14 +405,14 @@ function getAllPropValues(propName) {
   const array = [];
   for (const product of products) {
     //if (product.hasOwnProperty(propName))
-  	if (product[propName]) {
-    	 array.push(product[propName]);
+    if (product[propName]) {
+      array.push(product[propName]);
     }
-   
+
   }
-  
+
   return array;
-  
+
   // Change code above this line
 }
 
@@ -429,12 +429,12 @@ const products = [
 
 function calculateTotalPrice(productName) {
   // Пиши код ниже этой строки
-	for (const product of products) {
-    	if (product.name === productName) {
-        	return product.price * product.quantity;
-        }
+  for (const product of products) {
+    if (product.name === productName) {
+      return product.price * product.quantity;
     }
-return 0;
+  }
+  return 0;
 
   // Пиши код выше этой строки
 }
@@ -489,10 +489,10 @@ const highTemperatures = {
   tomorrow: 33,
 };
 // Change code below this line
-const {  yesterday: highYesterday, 
-       today: highToday, 
-       tomorrow: highTomorrow, 
-       icon: highIcon = "https://www.flaticon.com/svg/static/icons/svg/2204/2204346.svg", } = highTemperatures;
+const { yesterday: highYesterday,
+  today: highToday,
+  tomorrow: highTomorrow,
+  icon: highIcon = "https://www.flaticon.com/svg/static/icons/svg/2204/2204346.svg", } = highTemperatures;
 /*const highYesterday = highTemperatures.yesterday;
 const highToday = highTemperatures.today;
 const highTomorrow = highTemperatures.tomorrow;
@@ -540,16 +540,16 @@ const forecast = {
 };
 // Change code below this line
 const { today: {
-  			high: highToday,
-  			low: lowToday,
-  			icon: todayIcon = "https://www.flaticon.com/svg/static/icons/svg/2204/2204346.svg",
-		},
-       	tomorrow: {
-  			high: highTomorrow,
-  			low: lowTomorrow,
-  			icon: tomorrowIcon = "https://www.flaticon.com/svg/static/icons/svg/2204/2204346.svg",
-		},
-      } = forecast;
+  high: highToday,
+  low: lowToday,
+  icon: todayIcon = "https://www.flaticon.com/svg/static/icons/svg/2204/2204346.svg",
+},
+  tomorrow: {
+    high: highTomorrow,
+    low: lowTomorrow,
+    icon: tomorrowIcon = "https://www.flaticon.com/svg/static/icons/svg/2204/2204346.svg",
+  },
+} = forecast;
 /*const highToday = forecast.today.high;
 const lowToday = forecast.today.low;
 const todayIcon = forecast.today.icon;
@@ -571,8 +571,8 @@ const tomorrowIcon = forecast.tomorrow.icon;*/
 
 // Change code below this line
 function calculateMeanTemperature(forecast) {
-  const { today: {low: todayLow, high: todayHigh},
-        	tomorrow: {low: tomorrowLow, high: tomorrowHigh}} = forecast;
+  const { today: { low: todayLow, high: todayHigh },
+    tomorrow: { low: tomorrowLow, high: tomorrowHigh } } = forecast;
   /*const todayLow = forecast.today.low;
   const todayHigh = forecast.today.high;
   const tomorrowLow = forecast.tomorrow.low;
@@ -629,7 +629,7 @@ const overrideSettings = {
   timePerQuestion: 30,
 };
 // Change code below this line
-const finalSettings = {...defaultSettings, ...overrideSettings};
+const finalSettings = { ...defaultSettings, ...overrideSettings };
 
 
 /* ======================== Задача-30 ========================== */
@@ -651,7 +651,7 @@ function makeTask(data) {
   const category = 'General';
   const priority = 'Normal';
   // Change code below this line
- const task = {completed, category, priority, ...data };
+  const task = { completed, category, priority, ...data };
   return task;
   // Change code above this line
 }
@@ -663,11 +663,11 @@ function makeTask(data) {
 
 // Change code below this line
 function add(...args) {
-  
- let sum = 0;
+
+  let sum = 0;
   for (const arg of args) {
     //console.log(arg);
-  	 sum += arg;
+    sum += arg;
   }
   //console.log(sum);
   return sum;
@@ -685,7 +685,7 @@ function addOverNum(number, ...args) {
 
   for (const arg of args) {
     if (number < arg) {
-    total += arg;
+      total += arg;
     }
   }
 
@@ -705,24 +705,198 @@ function addOverNum(number, ...args) {
 // Change code below this line
 function findMatches(array, ...args) {
   const matches = []; // Don't change this line
-for (const value of args) {
-	if (array.includes(value)) {
-    	matches.push(value);
+  for (const value of args) {
+    if (array.includes(value)) {
+      matches.push(value);
     }
-}
+  }
   // Change code above this line
   return matches;
 }
 
 
-/* ======================== Задача-1 ========================== */
-/* ======================== Задача-1 ========================== */
-/* ======================== Задача-1 ========================== */
-/* ======================== Задача-1 ========================== */
-/* ======================== Задача-1 ========================== */
-/* ======================== Задача-1 ========================== */
-/* ======================== Задача-1 ========================== */
-/* ======================== Задача-1 ========================== */
+/* ======================== Задача-34 ========================== */
+/* Задание
+Добавь объекту bookShelf ещё два метода, которые пока что будут возвращать просто строки по аналогии с getBooks() и addBook(bookName).
+
+Метод removeBook(bookName) будет удалять книгу по имени. Возвращает строку "Deleting book <имя книги>", где <имя книги> это значение параметра bookName.
+
+Метод updateBook(oldName, newName) будет обновлять название книги на новое. Возвращает строку "Updating book <старое имя> to <новое имя>", где <старое имя> и <новое имя>это значения параметров oldName и newName соотвественно. */
+
+const bookShelf = {
+  // Change code below this line
+  books: ['The last kingdom', 'The guardian of dreams'],
+  getBooks() {
+    return 'Returning all books';
+  },
+  addBook(bookName) {
+    return `Adding book ${bookName}`;
+  },
+  removeBook(bookName) {
+    return `Deleting book ${bookName}`;
+  },
+  updateBook(oldName, newName) {
+    return `Updating book ${oldName} to ${newName}`;
+  },
+  // Change code above this line
+};
+
+
+/* ======================== Задача-35 ========================== */
+/* Задание
+Дополни метод updateBook(oldName, newName) так, чтобы он изменял название книги с oldName на newName в свойстве books. Используй indexOf() для того, чтобы найти нужный элемент массива, и splice() для того чтобы заменить этот элемент */
+
+const bookShelf = {
+  books: ['The last kingdom', 'Haze', 'The guardian of dreams'],
+  updateBook(oldName, newName) {
+    // Change code below this line
+	
+	for (const book of this.books) {
+    	if (book === oldName) {
+        	const bookIndex = this.books.indexOf(oldName);
+          this.books.splice(bookIndex, 1, newName);
+        }
+    }
+	
+    // Change code above this line
+  },
+};
+
+
+/* ======================== Задача-36 ========================== */
+/* Задание
+К нам обратилась владелица лавки зелий «У старой жабы» и заказала программу для ведения инвентаря - добавления, удаления, поиска и обновления зелий. Добавь объекту atTheOldToad свойство potions, значением которого сделай пустой массив. */
+
+const atTheOldToad = {
+  // Change code below this line
+  potions: [],
+  // Change code above this line
+};
+
+
+/* ======================== Задача-37 ========================== */
+/* Задание
+Добавь объекту atTheOldToad метод getPotions(), который просто возвращает значение свойства potions. */
+
+const atTheOldToad = {
+  // Change code below this line
+  potions: ['Speed potion', 'Dragon breath', 'Stone skin'],
+  getPotions() {
+    return this.potions;
+  	
+  },
+  // Change code above this line
+};
+
+
+/* ======================== Задача-38 ========================== */
+/* Задание
+Дополни метод addPotion(potionName) так, чтобы он добавлял зелье potionName в конец массива зелий в свойстве potions. */
+
+const atTheOldToad = {
+  potions: ['Speed potion', 'Dragon breath', 'Stone skin'],
+  addPotion(potionName) {
+    this.potions.push(potionName);
+    // Change code below this line
+    // Change code above this line
+  },
+};
+
+
+/* ======================== Задача-39 ========================== */
+/* Задание
+Дополни метод removePotion(potionName) так, чтобы он удалял зелье potionName из массива зелий в свойстве potions. */
+
+const atTheOldToad = {
+  potions: ["Speed potion", "Dragon breath", "Stone skin"],
+  removePotion(potionName) {
+    // Change code below this line
+    for (const potion of this.potions) {
+    	if (potion === potionName) {
+        	const potionIndex = this.potions.indexOf(potionName);
+          	this.potions.splice(potionIndex, 1);
+        }
+    }
+    
+    // Change code above this line
+  },
+};
+
+
+/* ======================== Задача-40 ========================== */
+/* Задание
+Дополни метод updatePotionName(oldName, newName) так, чтобы он обновлял название зелья с oldName на newName, в массиве зелий в свойстве potions. */
+
+const atTheOldToad = {
+  potions: ['Speed potion', 'Dragon breath', 'Stone skin'],
+  updatePotionName(oldName, newName) {
+    // Change code below this line
+ for (const potion of this.potions) {
+ 	if (potion === oldName) {
+    	const potionIndex = this.potions.indexOf(oldName);
+      this.potions.splice(potionIndex, 1, newName);
+    }
+ }
+    // Change code above this line
+  },
+};
+
+
+/* ======================== Задача-41 ========================== */
+/* Задание
+Заказчица хочет чтобы каждое зелье было представлено не только именем, но и ценой, а в будущем может быть и другими характеристиками. Поэтому теперь в свойстве potions будет храниться массив объектов со следующими свойствами.
+
+{
+  name: "Dragon breath",
+  price: 700
+}
+Выполни рефакторинг методов объекта atTheOldToad так, чтобы они работали не с массивом строк, а с массивом объектов.
+
+getPotions() - метод для получения всех зелий. Возвращает значение свойства potions.
+addPotion(newPotion) - добавляет зелье newPotion (уже объект) в массив в свойстве potions.
+removePotion(potionName) - удаляет объект зелья с именем potionName из массива в свойстве potions.
+updatePotionName(oldName, newName) - обновляет свойство name объекта-зелья с названием oldName на newName в массиве potions. */
+/* const atTheOldToad = {
+  potions: [
+    { name: 'Speed potion', price: 460 },
+    { name: 'Dragon breath', price: 780 },
+    { name: 'Stone skin', price: 520 },
+  ],
+  // Change code below this line
+  getPotions() {
+    return this.potions;
+  },
+  addPotion(potionName) {
+    if (this.potions.includes(potionName)) {
+      return `Potion ${potionName} is already equipped!`;
+    }
+
+    this.potions.push(potionName);
+  },
+  removePotion(potionName) {
+    const potionIndex = this.potions.indexOf(potionName);
+
+    if (potionIndex === -1) {
+      return `Potion ${potionName} is not in inventory!`;
+    }
+
+    this.potions.splice(potionIndex, 1);
+  },
+  updatePotionName(oldName, newName) {
+    const potionIndex = this.potions.indexOf(oldName);
+
+    if (potionIndex === -1) {
+      return `Potion ${oldName} is not in inventory!`;
+    }
+
+    this.potions.splice(potionIndex, 1, newName);
+  },
+  // Change code above this line
+};
+ */
+
+
+
 /* ======================== Задача-1 ========================== */
 /* ======================== Задача-1 ========================== */
 /* ======================== Задача-1 ========================== */
