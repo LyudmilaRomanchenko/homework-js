@@ -895,8 +895,66 @@ updatePotionName(oldName, newName) - обновляет свойство name о
 };
  */
 
+const atTheOldToad = {
+  potions: [
+    { name: 'Speed potion', price: 460 },
+    { name: 'Dragon breath', price: 780 },
+    { name: 'Stone skin', price: 520 },
+  ],
+  // Change code below this line
+  
+  getPotions() {
+    return this.potions;
+  },
+  addPotion(potionName) {
+    const { potions } = this;
+    for (const potion of potions) {
+    	if (potion === potionName) {
+        	return `Potion ${potionName} is already equipped!`;
+        }
+    potions.push(potionName);
+    }
+    //////////////////////////////
+    /*if (this.potions.includes(potionName)) {
+      return `Potion ${potionName} is already equipped!`;
+    }
+    this.potions.push(potionName);*/
+    ///////////////////////////////////
+  },
+  removePotion(potionName) {
+    const { potions } = this;
+    for (let i = 0; i < potions.length; i +=1) {
+    	if (potions[i].name === potionName) {
+        	potions.splice(i, 1);
+        }
+    }
+    return `Potion ${potionName} is not in inventory!`;
+   /////////////////////////////////// 
+    /*const potionIndex = this.potions.indexOf(potionName);
 
+    if (potionIndex === -1) {
+      return `Potion ${potionName} is not in inventory!`;
+    }
+    this.potions.splice(potionIndex, 1);*/
+    ////////////////////////////
+  },
+  updatePotionName(oldName, newName) {
+    const { potions } = this;
+    for (let i = 0; i < potions.length; i +=1) {
+    	if (potions[i].name === oldName) {
+        	potions[i].name = newName;
+        }
+    }
+    return `Potion ${oldName} is not in inventory!`;
+    ////////////////////////
+    /*const potionIndex = this.potions.indexOf(oldName);
 
-/* ======================== Задача-1 ========================== */
-/* ======================== Задача-1 ========================== */
-/* ======================== Задача-1 ========================== */
+    if (potionIndex === -1) {
+      return `Potion ${oldName} is not in inventory!`;
+    }
+
+    this.potions.splice(potionIndex, 1, newName);*/
+    ///////////////////////
+  },
+  // Change code above this line
+};
