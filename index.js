@@ -32,11 +32,11 @@ function calculateTotalPrice(orderedItems) {
   let totalPrice = 0;
   // Пиши код ниже этой строки
 
- /* for (let i = 0; i < orderedItems.length; i += 1) {
-    totalPrice += orderedItems[i];
-  }*/
-  
-orderedItems.forEach(number => totalPrice += number)
+  /* for (let i = 0; i < orderedItems.length; i += 1) {
+     totalPrice += orderedItems[i];
+   }*/
+
+  orderedItems.forEach(number => totalPrice += number)
   // Пиши код выше этой строки
   return totalPrice;
 }
@@ -49,24 +49,24 @@ orderedItems.forEach(number => totalPrice += number)
 Выполни рефакторинг функции так, чтобы вместо цикла for она использовала метод forEach. */
 
 function filterArray(numbers, value) {
-    const filteredNumbers = [];
-    // Пиши код ниже этой строки
-  
-   /*for (let i = 0; i < numbers.length; i += 1) {
-      if (numbers[i] > value) {
-        filteredNumbers.push(numbers[i]);
-      }
-    }*/
-  
+  const filteredNumbers = [];
+  // Пиши код ниже этой строки
+
+  /*for (let i = 0; i < numbers.length; i += 1) {
+     if (numbers[i] > value) {
+       filteredNumbers.push(numbers[i]);
+     }
+   }*/
+
   numbers.forEach(numbers => {
-  	      if (numbers > value) {
-        filteredNumbers.push(numbers);
-  	}
-  } )
-  
-    // Пиши код выше этой строки
-    return filteredNumbers;
-  }
+    if (numbers > value) {
+      filteredNumbers.push(numbers);
+    }
+  })
+
+  // Пиши код выше этой строки
+  return filteredNumbers;
+}
 
 /* ======================== Задача-3 ========================== */
 /* Задача. Общие элементы
@@ -76,26 +76,26 @@ function filterArray(numbers, value) {
 Выполни рефакторинг функции так, чтобы вместо цикла for она использовала метод forEach. */
 
 function getCommonElements(firstArray, secondArray) {
-    const commonElements = [];
-    // Пиши код ниже этой строки
-  
-    /*for (let i = 0; i < firstArray.length; i += 1) {
-      if (secondArray.includes(firstArray[i])) {
-        commonElements.push(firstArray[i]);
-      }
-    }*/
-  
+  const commonElements = [];
+  // Пиши код ниже этой строки
+
+  /*for (let i = 0; i < firstArray.length; i += 1) {
+    if (secondArray.includes(firstArray[i])) {
+      commonElements.push(firstArray[i]);
+    }
+  }*/
+
   firstArray.forEach(numbers => {
-  	if (secondArray.includes(numbers)) {
-        commonElements.push(numbers);
-      }
+    if (secondArray.includes(numbers)) {
+      commonElements.push(numbers);
+    }
   }
-  	
+
   )
-  
-    return commonElements;
-    // Пиши код выше этой строки
-  }
+
+  return commonElements;
+  // Пиши код выше этой строки
+}
 
 /* ======================== Задача-4 ========================== */
 /* Стрелочные функции.
@@ -244,7 +244,7 @@ function filterArray(numbers, value) {
 const filterArray = (numbers, value) => {
   const filteredNumbers = [];
 
-  numbers.forEach(number=> {
+  numbers.forEach(number => {
     if (number > value) {
       filteredNumbers.push(number);
     }
@@ -278,7 +278,7 @@ function getCommonElements(firstArray, secondArray) {
 const getCommonElements = (firstArray, secondArray) => {
   const commonElements = [];
 
-  firstArray.forEach(element=> {
+  firstArray.forEach(element => {
     if (secondArray.includes(element)) {
       commonElements.push(element);
     }
@@ -338,9 +338,9 @@ function changeEven(numbers, value) {
     if (numbers[i] % 2 === 0) {
       newArray.push(numbers[i] + value);
     }
-    else {newArray.push(numbers[i]);}
+    else { newArray.push(numbers[i]); }
   }
-return newArray;
+  return newArray;
   // Пиши код выше этой строки
 }
 
@@ -413,7 +413,8 @@ const titles = books.map(book => book.title);
 
 /* ======================== Задача-12 ========================== */
 /* Метод flatMap()
-Метод flatMap(callback) аналогичен методу map(), но применяется в случаях, когда результат это многомерный массив который необходимо «разгладить».
+Метод flatMap(callback) аналогичен методу map(), но применяется в случаях, когда результат это многомерный 
+массив который необходимо «разгладить».
 
 массив.flatMap((element, index, array) => {
   // Тело коллбек-функции
@@ -545,10 +546,10 @@ const genres = books.flatMap(book => book.genres);
 
 // Пиши код ниже этой строки
 const getUserNames = users => {
-  return users.map(user => user.name);  
- 
-   };
-   // Пиши код выше этой строки
+  return users.map(user => user.name);
+
+};
+// Пиши код выше этой строки
 
 /* ======================== Задача-14 ========================== */
 /* Задача. Почты пользователей
@@ -638,10 +639,10 @@ const getUserNames = users => {
 
 // Пиши код ниже этой строки
 const getUserEmails = users => {
-  return users.map(user => user.email);  
+  return users.map(user => user.email);
 
-  };
-  // Пиши код выше этой строки
+};
+// Пиши код выше этой строки
 
 /* ======================== Задача-15 ========================== */
 /* Методы filter и find
@@ -673,13 +674,14 @@ console.log(values); // [51, -3, 27, 21, -68, 42, -37]
 То есть метод filter вызывает коллбек-функцию для каждого элемента исходного массива и если результат её выполнения true, текущий элемент добавляет в новый массив.
 
 Задание
-Дополни код так, чтобы в переменной evenNumbers получился массив чётных чисел из массива numbers, а в переменной oddNumbers массив нечётных. Обязательно используй метод filter(). */
+Дополни код так, чтобы в переменной evenNumbers получился массив чётных чисел из массива numbers, 
+а в переменной oddNumbers массив нечётных. Обязательно используй метод filter(). */
 
 const numbers = [17, 24, 82, 61, 36, 18, 47, 52, 73];
 // Пиши код ниже этой строки
 
-const evenNumbers = numbers.filter(number => number%2 === 0);
-const oddNumbers = numbers.filter(number => number%2 !== 0);
+const evenNumbers = numbers.filter(number => number % 2 === 0);
+const oddNumbers = numbers.filter(number => number % 2 !== 0);
 
 /* ======================== Задача-16 ========================== */
 /* Фильтрация уникальных элементов
@@ -717,7 +719,8 @@ indexOf() вернёт 0, потому что ищет первое совпад
 Значение параметра index будет 3.
 Они не равны, значит это повторяющийся - не уникальный элемент.
 Задание
-Дополни код так, чтобы в переменной allGenres был массив всех жанров книг (свойство genres) из массива books, а в переменной uniqueGenres массив уникальных жанров - без повторений. */
+Дополни код так, чтобы в переменной allGenres был массив всех жанров книг (свойство genres) из массива books, 
+а в переменной uniqueGenres массив уникальных жанров - без повторений. */
 
 const books = [
   {
@@ -785,32 +788,770 @@ const MIN_RATING = 8;
 const AUTHOR = 'Бернард Корнуэлл';
 // Пиши код ниже этой строки
 
-const topRatedBooks = books.filter(({rating}) => rating >= MIN_RATING);
-const booksByAuthor = books.filter(({author}) => author === AUTHOR);
+const topRatedBooks = books.filter(({ rating }) => rating >= MIN_RATING);
+const booksByAuthor = books.filter(({ author }) => author === AUTHOR);
 
 /* ======================== Задача-18 ========================== */
+/* Задача. Пользователи с цветом глаз
+Этот массив объектов мы будем передавать в параметр users при вызове функции из задания.
+
+[
+  {
+    name: 'Moore Hensley',
+    email: 'moorehensley@indexia.com',
+    eyeColor: 'blue',
+    friends: ['Sharron Pace'],
+    isActive: false,
+    balance: 2811,
+    gender: 'male'
+  },
+  {
+    name: 'Sharlene Bush',
+    email: 'sharlenebush@tubesys.com',
+    eyeColor: 'blue',
+    friends: ['Briana Decker', 'Sharron Pace'],
+    isActive: true,
+    balance: 3821,
+    gender: 'female'
+  },
+  {
+    name: 'Ross Vazquez',
+    email: 'rossvazquez@xinware.com',
+    eyeColor: 'green',
+    friends: ['Marilyn Mcintosh', 'Padilla Garrison', 'Naomi Buckner'],
+    isActive: false,
+    balance: 3793,
+    gender: 'male'
+  },
+  {
+    name: 'Elma Head',
+    email: 'elmahead@omatom.com',
+    eyeColor: 'green',
+    friends: ['Goldie Gentry', 'Aisha Tran'],
+    isActive: true,
+    balance: 2278,
+    gender: 'female'
+  },
+  {
+    name: 'Carey Barr',
+    email: 'careybarr@nurali.com',
+    eyeColor: 'blue',
+    friends: ['Jordan Sampson', 'Eddie Strong'],
+    isActive: true,
+    balance: 3951,
+    gender: 'male'
+  },
+  {
+    name: 'Blackburn Dotson',
+    email: 'blackburndotson@furnigeer.com',
+    eyeColor: 'brown',
+    friends: ['Jacklyn Lucas', 'Linda Chapman'],
+    isActive: false,
+    balance: 1498,
+    gender: 'male'
+  },
+  {
+    name: 'Sheree Anthony',
+    email: 'shereeanthony@kog.com',
+    eyeColor: 'brown',
+    friends: ['Goldie Gentry', 'Briana Decker'],
+    isActive: true,
+    balance: 2764,
+    gender: 'female'
+  }
+]
+Задание
+Дополни функцию getUsersWithEyeColor(users, color) так, чтобы она возвращала массив пользователей у которых цвет глаз (свойство eyeColor) совпадает со значением параметра color. */
+
+// Пиши код ниже этой строки
+const getUsersWithEyeColor = (users, color) => {
+  return users.filter(user => user.eyeColor === color);
+
+};
+// Пиши код выше этой строки
+
+/* ======================== Задача-19 ========================== */
+/* Задача. Пользователи в возрастной категории
+Этот массив объектов мы будем передавать в параметр users при вызове функции из задания.
+
+[
+  {
+    name: 'Moore Hensley',
+    email: 'moorehensley@indexia.com',
+    eyeColor: 'blue',
+    friends: ['Sharron Pace'],
+    isActive: false,
+    balance: 2811,
+    gender: 'male',
+    age: 37
+  },
+  {
+    name: 'Sharlene Bush',
+    email: 'sharlenebush@tubesys.com',
+    eyeColor: 'blue',
+    friends: ['Briana Decker', 'Sharron Pace'],
+    isActive: true,
+    balance: 3821,
+    gender: 'female',
+    age: 34
+  },
+  {
+    name: 'Ross Vazquez',
+    email: 'rossvazquez@xinware.com',
+    eyeColor: 'green',
+    friends: ['Marilyn Mcintosh', 'Padilla Garrison', 'Naomi Buckner'],
+    isActive: false,
+    balance: 3793,
+    gender: 'male',
+    age: 24
+  },
+  {
+    name: 'Elma Head',
+    email: 'elmahead@omatom.com',
+    eyeColor: 'green',
+    friends: ['Goldie Gentry', 'Aisha Tran'],
+    isActive: true,
+    balance: 2278,
+    gender: 'female',
+    age: 21
+  },
+  {
+    name: 'Carey Barr',
+    email: 'careybarr@nurali.com',
+    eyeColor: 'blue',
+    friends: ['Jordan Sampson', 'Eddie Strong'],
+    isActive: true,
+    balance: 3951,
+    gender: 'male',
+    age: 27
+  },
+  {
+    name: 'Blackburn Dotson',
+    email: 'blackburndotson@furnigeer.com',
+    eyeColor: 'brown',
+    friends: ['Jacklyn Lucas', 'Linda Chapman'],
+    isActive: false,
+    balance: 1498,
+    gender: 'male',
+    age: 38
+  },
+  {
+    name: 'Sheree Anthony',
+    email: 'shereeanthony@kog.com',
+    eyeColor: 'brown',
+    friends: ['Goldie Gentry', 'Briana Decker'],
+    isActive: true,
+    balance: 2764,
+    gender: 'female',
+    age: 39
+  }
+]
+Задание
+Дополни функцию getUsersWithAge(users, minAge, maxAge) так, чтобы она возвращала массив пользователей, возраст которых (свойство age) попадает в промежуток от minAge до maxAge. */
+
+// Пиши код ниже этой строки
+const getUsersWithAge = (users, minAge, maxAge) => {
+ 	return users.filter(user => user.age > minAge && user.age < maxAge);
+   
+    
+
+};
+// Пиши код выше этой строки
+
+/* ======================== Задача-20 ========================== */
+/* Задача. Пользователи с другом
+Этот массив объектов мы будем передавать в параметр users при вызове функции из задания.
+
+[
+  {
+    name: 'Moore Hensley',
+    email: 'moorehensley@indexia.com',
+    eyeColor: 'blue',
+    friends: ['Sharron Pace'],
+    isActive: false,
+    balance: 2811,
+    gender: 'male',
+    age: 37
+  },
+  {
+    name: 'Sharlene Bush',
+    email: 'sharlenebush@tubesys.com',
+    eyeColor: 'blue',
+    friends: ['Briana Decker', 'Sharron Pace'],
+    isActive: true,
+    balance: 3821,
+    gender: 'female',
+    age: 34
+  },
+  {
+    name: 'Ross Vazquez',
+    email: 'rossvazquez@xinware.com',
+    eyeColor: 'green',
+    friends: ['Marilyn Mcintosh', 'Padilla Garrison', 'Naomi Buckner'],
+    isActive: false,
+    balance: 3793,
+    gender: 'male',
+    age: 24
+  },
+  {
+    name: 'Elma Head',
+    email: 'elmahead@omatom.com',
+    eyeColor: 'green',
+    friends: ['Goldie Gentry', 'Aisha Tran'],
+    isActive: true,
+    balance: 2278,
+    gender: 'female',
+    age: 21
+  },
+  {
+    name: 'Carey Barr',
+    email: 'careybarr@nurali.com',
+    eyeColor: 'blue',
+    friends: ['Jordan Sampson', 'Eddie Strong'],
+    isActive: true,
+    balance: 3951,
+    gender: 'male',
+    age: 27
+  },
+  {
+    name: 'Blackburn Dotson',
+    email: 'blackburndotson@furnigeer.com',
+    eyeColor: 'brown',
+    friends: ['Jacklyn Lucas', 'Linda Chapman'],
+    isActive: false,
+    balance: 1498,
+    gender: 'male',
+    age: 38
+  },
+  {
+    name: 'Sheree Anthony',
+    email: 'shereeanthony@kog.com',
+    eyeColor: 'brown',
+    friends: ['Goldie Gentry', 'Briana Decker'],
+    isActive: true,
+    balance: 2764,
+    gender: 'female',
+    age: 39
+  }
+]
+Задание
+Дополни функцию getUsersWithFriend(users, friendName) так, чтобы она возвращала массив пользователей у которых есть друг с именем в параметре friendName. Массив друзей пользователя хранится в свойстве friends. */
+
+// Пиши код ниже этой строки
+const getUsersWithFriend = (users, friendName) => {
+  return users.filter( user => user.friends.includes(friendName));
+};
+// Пиши код выше этой строки
+
+
+/* ======================== Задача-21 ========================== */
+/* Задача. Список друзей
+Этот массив объектов мы будем передавать в параметр users при вызове функции из задания. 
+(смотри масив из предыдущей задачи).
+Задание
+Дополни функцию getFriends(users) так, чтобы она возвращала массив друзей всех пользователей (свойство friends). 
+У нескольких пользователей могут быть одинаковые друзья, сделай так чтобы возвращаемый массив не содержал 
+повторений. */
+
+// Пиши код ниже этой строки
+const getFriends = (users) => {
+  const allFriends = users.flatMap(user => user.friends);
+ return allFriends.filter((course, index, array) => array.indexOf(course) === index);
+};
+// Пиши код выше этой строки
+
+
+/* ======================== Задача-22 ========================== */
+/* Задача. Активные пользователи
+Этот массив объектов мы будем передавать в параметр users при вызове функции из задания. 
+(смотри масив из предыдущей задачи).
+Задание
+Дополни функцию getActiveUsers(users) так, чтобы она возвращала массив активных пользователей, значение свойства isActive которых true.*/
+
+// Пиши код ниже этой строки
+const getActiveUsers = (users) => {
+  return users.filter(user => user.isActive);
+};
+// Пиши код выше этой строки
+
+
+/* ======================== Задача-23 ========================== */
+/* Задача. Неактивные пользователи
+Этот массив объектов мы будем передавать в параметр users при вызове функции из задания.
+(смотри масив из предыдущей задачи).
+Задание
+Дополни функцию getInactiveUsers(users) так, чтобы она возвращала массив неактивных пользователей, значение свойства isActive которых false.
+ */
+
+// Пиши код ниже этой строки
+const getInactiveUsers = (users) => {
+  return users.filter(user => !user.isActive); 
+};
+// Пиши код выше этой строки
+
+
+/* ======================== Задача-24 ========================== */
+/* Метод find()
+Если метод filter(callack) используется для поиска всех элементов удовлетворяющим условию, то метод find(callback) позволяет найти и вернуть первый подходящий элемент, после чего перебор массива прекращается. То есть он ищет до первого совпадения.
+
+массив.find((element, index, array) => {
+  // Тело коллбек-функции
+});
+Не изменяет оригинальный массив.
+Поэлементно перебирает оригинальный массив.
+Возвращает первый элемент удовлетворяющий условию, то есть когда коллбек возвращает true.
+Если ни один элемент не подошёл, то есть для всех элементов коллбек вернул false, метод возвращает undefined.
+Метод find() используется для одной задачи - поиска элемента по уникальному значению свойства. Например, поиск пользователя по почте, автомобиля по серийному номеру, книги по названию и т. п.
+
+const colorPickerOptions = [
+  { label: 'red', color: '#F44336' },
+  { label: 'green', color: '#4CAF50' },
+  { label: 'blue', color: '#2196F3' },
+  { label: 'pink', color: '#E91E63' },
+  { label: 'indigo', color: '#3F51B5' },
+];
+
+colorPickerOptions.find((option) => option.label === 'blue'); // { label: 'blue', color: '#2196F3' }
+colorPickerOptions.find((option) => option.label === 'pink'); // { label: 'pink', color: '#E91E63' }
+colorPickerOptions.find((option) => option.label === 'white'); // undefined
+Задание
+Используя метод find() дополни код так, чтобы:
+
+В переменной bookWithTitle получился объект книги название которой (свойство title) совпадает со значением переменной BOOK_TITLE.
+В переменной bookByAuthor получился объект книги автор который (свойство author) совпадает со значением переменной AUTHOR. */
+
+const books = [
+  { title: 'Последнее королевство', author: 'Бернард Корнуэлл', rating: 8.38 },
+  { title: 'На берегу спокойных вод', author: 'Роберт Шекли', rating: 8.51 },
+  { title: 'Сон смешного человека', author: 'Федор Достоевский', rating: 7.75 },
+  { title: 'Красна как кровь', author: 'Ли Танит', rating: 7.94 },
+];
+const BOOK_TITLE = 'Сон смешного человека';
+const AUTHOR = 'Роберт Шекли';
+// Пиши код ниже этой строки
+
+const bookWithTitle = books.find(book => book.title === BOOK_TITLE);
+const bookByAuthor = books.find(book => book.author === AUTHOR);
+
+
+/* ======================== Задача-25 ========================== */
+/* Задача. Пользователь с почтой
+Этот массив объектов мы будем передавать в параметр users при вызове функции из задания.
+Задание
+Дополни функцию getUserWithEmail(users, email) так, чтобы она возвращала объект пользователя, почта которого (свойство email) совпадает со значением параметра email. */
+
+// Пиши код ниже этой строки
+const getUserWithEmail = (users, email) => {
+ return users.find(user => user.email === email); 
+};
+// Пиши код выше этой строки
+
+
+/* ======================== Задача-26 ========================== */
+/* Метод every()
+Метод every(callback) проверяет проходят ли все элементы массива тест предоставляемый коллбек-функцией. Возвращает true или false.
+
+массив.every((element, index, array) => {
+  // Тело коллбек-функции
+});
+Не изменяет оригинальный массив.
+Поэлементно перебирает оригинальный массив.
+Возвращает true если все элементы массива удовлетворяют условию.
+Возвращает false если хотя бы один элемент массива не удовлетворяет условию.
+Перебор массива прекращается если коллбек возвращает false.
+// Все элементы больше либо равны нулю? - да
+[1, 2, 3, 4, 5].every((value) => value >= 0); // true
+
+// Все элементы больше либо равны нулю? - нет
+[1, 2, 3, -10, 4, 5].every((value) => value >= 0); // false
+При работе с массивом объектов проверяется значение какого-то их свойства.
+
+Задание
+Используя метод every() дополни код так, чтобы:
+
+В переменной eachElementInFirstIsEven был результат проверки всех элементов массива firstArray на чётность.
+В переменной eachElementInFirstIsOdd был результат проверки всех элементов массива firstArray на нечётность.
+В переменной eachElementInSecondIsEven был результат проверки всех элементов массива secondArray на чётность.
+В переменной eachElementInSecondIsOdd был результат проверки всех элементов массива secondArray на нечётность.
+В переменной eachElementInThirdIsEven был результат проверки всех элементов массива thirdArray на чётность.
+В переменной eachElementInThirdIsOdd был результат проверки всех элементов массива thirdArray на нечётность. */
+
+const firstArray = [26, 94, 36, 18];
+const secondArray = [17, 61, 23];
+const thirdArray = [17, 26, 94, 61, 36, 23, 18];
+// Пиши код ниже этой строки
+
+const eachElementInFirstIsEven = firstArray.every(value => value%2 === 0);
+const eachElementInFirstIsOdd = firstArray.every(value => value%2 !== 0);
+
+const eachElementInSecondIsEven = secondArray.every(value => value%2 === 0);
+const eachElementInSecondIsOdd = secondArray.every(value => value%2 !== 0);
+
+const eachElementInThirdIsEven = thirdArray.every(value => value%2 === 0);
+const eachElementInThirdIsOdd = thirdArray.every(value => value%2 !== 0);
+
+/* ======================== Задача-27 ========================== */
+/* Задача. Все ли пользователи активны
+Этот массив объектов мы будем передавать в параметр users при вызове функции из задания.
+Задание
+Дополни функцию isEveryUserActive(users) так, чтобы она проверяла все ли пользователи сейчас активны (свойство isActive) и возвращала true или false. */
+
+// Пиши код ниже этой строки
+const isEveryUserActive = (users) => {
+  return users.every(user => user.isActive);
+};
+// Пиши код выше этой строки
+
+
+/* ======================== Задача-28 ========================== */
+/* Метод some()
+Метод some(callback) проверяет проходит ли хотя бы один элемент массива тест предоставляемый коллбек-функцией. Возвращает true или false.
+
+массив.some((element, index, array) => {
+  // Тело коллбек-функции
+});
+Не изменяет оригинальный массив.
+Поэлементно перебирает оригинальный массив.
+Возвращает true если хотя бы один элемент массива удовлетворяет условию.
+Возвращает false если ни один элемент массив не удовлетворяет условию.
+Перебор массива прекращается если коллбек возвращает true.
+// Есть хотя бы один элемент больше либо равный нулю? - да
+[1, 2, 3, 4, 5].some(value => value >= 0); // true
+
+// Есть хотя бы один элемент больше либо равный нулю? - да
+[-7, -20, 3, -10, -14].some(value => value >= 0); // true
+
+// Есть хотя бы один элемент меньше нуля? - нет
+[1, 2, 3, 4, 5].some(value => value < 0); // false
+
+// Есть хотя бы один элемент меньше нуля? - да
+[1, 2, 3, -10, 4, 5].some(value => value < 0); // true
+Задание
+Используя метод some() дополни код так, чтобы:
+
+В переменной anyElementInFirstIsEven был результат проверки наличия чётных элементов в массиве firstArray.
+В переменной anyElementInFirstIsOdd был результат проверки наличия нечётных элементов в массиве firstArray.
+В переменной anyElementInSecondIsEven был результат проверки наличия чётных элементов в массиве secondArray.
+В переменной anyElementInSecondIsOdd был результат проверки наличия нечётных элементов в массиве secondArray.
+В переменной anyElementInThirdIsEven был результат проверки наличия чётных элементов в массиве thirdArray.
+В переменной anyElementInThirdIsOdd был результат проверки наличия нечётных элементов в массиве thirdArray. */
+
+const firstArray = [26, 94, 36, 18];
+const secondArray = [17, 61, 23];
+const thirdArray = [17, 26, 94, 61, 36, 23, 18];
+// Пиши код ниже этой строки
+
+const anyElementInFirstIsEven = firstArray.some(value => value%2 === 0);
+const anyElementInFirstIsOdd = firstArray.some(value => value%2 !== 0)
+
+const anyElementInSecondIsEven = secondArray.some(value => value%2 === 0);
+const anyElementInSecondIsOdd = secondArray.some(value => value%2 !== 0);
+
+const anyElementInThirdIsEven = thirdArray.some(value => value%2 === 0);
+const anyElementInThirdIsOdd = thirdArray.some(value => value%2 !== 0);
+
+
+/* ======================== Задача-29 ========================== */
+/* Задача. Есть ли активные пользователи
+Этот массив объектов мы будем передавать в параметр users при вызове функции из задания.
+Задание
+Дополни функцию isAnyUserActive(users) так, чтобы она проверяла наличие активных пользователей (свойство isActive) и возвращала true или false. */
+
+// Пиши код ниже этой строки
+const isAnyUserActive = users => {
+ return users.some(user => user.isActive); 
+};
+// Пиши код выше этой строки
+
+/* ======================== Задача-30 ========================== */
+/* Метод reduce()
+Метод reduce(callback, initialValue) используется для последовательной обработки каждого элемента массива с сохранением промежуточного результата, как аккумулятор. Немного сложнее других в усвоении, но результат стоит того.
+
+массив.reduce((previousValue, element, index, array) => {
+  // Тело коллбек-функции
+}, initialValue);
+Не изменяет оригинальный массив.
+Поэлементно перебирает оригинальный массив.
+Возвращает что угодно.
+Делает что угодно.
+Легче всего представить его работу на примере подсчёта суммы элементов массива.
+
+const total = [2, 7, 3, 14, 6].reduce((previousValue, number) => {
+  return previousValue + number;
+}, 0);
+
+console.log(total); // 32
+Первый параметр коллбек-функции (previousValue) это аккумулятор, то есть промежуточный результат. Значение которое вернёт коллбек-функция на текущей итерации, будет значением этого параметра на следующей.
+
+Вторым аргументом для reduce() можно передать необязательное начальное значение аккумулятора - параметр initialValue.
+
+# Вначале метод reduce() создаёт внутреннюю переменную-аккумулятор и
+# присваивает ей значение параметра initialValue или первого элемента
+# перебираемого массива, если initialValue не задан.
+previousValue = 0
+
+# Далее коллбек-функция вызывается для каждого элемента массива. Текущее значение
+# параметра previousValue это то, что вернула коллбек-функция на прошлой итерации.
+Итерация 1 -> previousValue = 0 -> number = 2 -> return 0 + 2 -> return 2
+Итерация 2 -> previousValue = 2 -> number = 7 -> return 2 + 7 -> return 9
+Итерация 3 -> previousValue = 9 -> number = 3 -> return 9 + 3 -> return 12
+Итерация 4 -> previousValue = 12 -> number = 14 -> return 12 + 14 -> return 26
+Итерация 5 -> previousValue = 26 -> number = 6 -> return 26 + 6 -> return 32
+
+# После того как весь массив перебран, метод reduce() возвращает значение аккумулятора.
+Результат - 32
+То есть метод reduce() используется когда необходимо взять «много» и привести к «одному». В повседневных задачах его применение сводится к работе с числами.
+
+Задание
+Игровому сервису необходим функционал подсчёта среднего времени проведённого в играх. Дополни код так, чтобы в переменной totalPlayTime получилось общее игровое время из массива playtimes. */
+
+const players = {
+  mango: 1270,
+  poly: 468,
+  ajax: 710,
+  kiwi: 244
+};
+const playtimes = Object.values(players); // [1270, 468, 710, 244]
+// Пиши код ниже этой строки
+
+const totalPlayTime = playtimes.reduce(((acc, number) => acc + number), 0);
+
+// Пиши код выше этой строки
+const averagePlayTime = totalPlayTime / playtimes.length;
+
+/* ======================== Задача-31 ========================== */
+/* Метод reduce() и массив объектов
+При работе с массивом объектов выполняется редуцирование по значению какого-то свойства. Например, есть массив студентов с баллами за тест. Необходимо получить средний бал.
+
+const students = [
+  { name: 'Манго', score: 83 },
+  { name: 'Поли', score: 59 },
+  { name: 'Аякс', score: 37 },
+  { name: 'Киви', score: 94 },
+  { name: 'Хьюстон', score: 64 },
+];
+
+// Название аккумулятора может быть произвольным, это просто параметр функции
+const totalScore = students.reduce((total, student) => {
+  return total + student.score;
+}, 0);
+
+const averageScore = totalScore / students.length;
+Задание
+Нашему сервису необходимо рассчитать среднее время проведённое в одной игре для каждого игрока, и получить общую сумму этих времён. Рассчитать время для каждого из игроков, можно разделив его время (свойство playtime) на количество игр (свойство gamesPlayed). */
+
+const players = [
+  { name: 'Манго', playtime: 1270, gamesPlayed: 4 },
+  { name: 'Поли', playtime: 469, gamesPlayed: 2 },
+  { name: 'Аякс', playtime: 690, gamesPlayed: 3 },
+  { name: 'Киви', playtime: 241, gamesPlayed: 1 },
+];
+// Пиши код ниже этой строки
+
+const totalAveragePlaytimePerGame = players.reduce(((acc, number) => acc + number.playtime/number.gamesPlayed), 0);
+
+
+/* ======================== Задача-32 ========================== */
+/* Задача. Общий баланс пользователей
+Этот массив объектов мы будем передавать в параметр users при вызове функции из задания.
+Задание
+Дополни функцию calculateTotalBalance(users) так, чтобы она считала и возвращала сумму всех средств (свойство balance) которые хранят пользователи из массива users. */
+
+// Пиши код ниже этой строки
+const calculateTotalBalance = users => {
+ return users.reduce(((acc, number) => acc + number.balance), 0); 
+};
+// Пиши код выше этой строки
+
+/* ======================== Задача-33 ========================== */
+/* Задача. Общее количество друзей
+Этот массив объектов мы будем передавать в параметр users при вызове функции из задания.
+Задание
+Дополни функцию getTotalFriendCount(users) так, чтобы она считала и возвращала общее количество друзей (свойство friends) всех пользователей из массива users. */
+
+// Пиши код ниже этой строки
+const getTotalFriendCount = users => {
+  return users.reduce(((acc, user) => acc + user.friends.length), 0);
+};
+// Пиши код выше этой строки
+
+/* ======================== Задача-34 ========================== */
+/* Метод sort()
+Метод sort() сортирует элементы массива, но в отличии от остальных перебирающих методов, он сортирует исходный массив.
+
+Сортирует и изменяет исходный массив.
+Возвращает изменённый массив, то есть ссылку на отсортированный исходный.
+По умолчанию сортирует по возрастанию.
+Сравнение происходит путём приведения значений к строке и сравнения порядковых номеров в таблице Unicode.
+// Массив чисел будет отсортирован по возврастанию
+const scores = [61, 19, 74, 35, 92, 56];
+scores.sort();
+console.log(scores); // [19, 35, 56, 61, 74, 92]
+
+// Массив строк сортируется по алфавиту
+const students = ["Вика", "Андрей", "Олег", "Юля", "Борис", "Катя"];
+students.sort();
+console.log(students); // [ 'Андрей', 'Борис', 'Вика', 'Катя', 'Олег', 'Юля' ]
+
+// При этом порядковый номер заглавных букв меньше чем у прописных
+const letters = ["b", "B", "a", "A", "c", "C"];
+letters.sort();
+console.log(letters); // ['A', 'B', 'C', 'a', 'b', 'c']
+Из-за того, что сортируется исходный массив, нарушается принцип чистоты функций и нельзя удобно сделать несколько производных коллекций на базе исходной. Например, сделать коллекцию отсортированную по возрастанию, а другую по убыванию. Поэтому перед сортировкой делают полную копию исходного массива и сортируют уже её.
+
+const scores = [61, 19, 74, 35, 92, 56];
+const ascendingScores = [...scores].sort();
+
+console.log(scores); // [61, 19, 74, 35, 92, 56]
+console.log(ascendingScores); // [19, 35, 56, 61, 74, 92]
+Задание
+Дополни код так, чтобы в переменной ascendingReleaseDates получилась отсортированная по возрастанию копия массива releaseDates, а в переменной alphabeticalAuthors копия массива имён авторов authors отсортированная в по алфавиту. */
+
+const releaseDates = [2016, 1967, 2008, 1984, 1973, 2012, 1997];
+const authors = [
+  'Ли Танит',
+  'Бернард Корнуэлл',
+  'Роберт Шекли',
+  'Федор Достоевский'
+];
+// Пиши код ниже этой строки
+
+const ascendingReleaseDates = [...releaseDates].sort();
+
+const alphabeticalAuthors = [...authors].sort();
+
+/* ======================== Задача-35 ========================== */
+/* Свой порядок сортировки чисел
+Для указания своего порядка сортировки методу sort(callback) нужно передать коллбек-функцию с двумя параметрами. Это функция сравнения (compare function), порядок сортировки зависит от её результата. Метод sort() будет вызывать её для произвольных двух элементов.
+
+массив.sort((firstEl, secondEl) => {
+  // Тело коллбек-функции
+});
+firstEl - первый элемент для сравнения.
+secondEl - второй элемент для сравнения.
+Если вызов compareFunction(firstEl, secondEl) возвращает любое отрицательное значение, то есть firstEl меньше secondEl, сортировка поставит firstEl перед secondEl. Это сортировка по возрастанию.
+
+const scores = [61, 19, 74, 35, 92, 56];
+const ascendingScores = [...scores].sort((a, b) => a - b);
+console.log(ascendingScores); // [19, 35, 56, 61, 74, 92]
+Если вызов compareFunction(firstEl, secondEl) возвращает любое положительное значение больше нуля, то есть secondEl больше firstEl, сортировка поставит secondEl перед firstEl. Это сортировка по убыванию.
+
+const scores = [61, 19, 74, 35, 92, 56];
+const descendingScores = [...scores].sort((a, b) => b - a);
+console.log(descendingScores); // [92, 74, 61, 56, 35, 19]
+Eсли вызов compareFunction(firstEl, secondEl) вернёт 0, сортировка оставит firstEl и secondEl неизменными по отношению друг к другу, но отсортирует их по отношению ко всем другим элементам. Но вообще не важно, что возвращать, если их взаимный порядок не имеет значения.
+
+Задание
+Онлайн бибилиотеке необходимо отображать книги сортированные по дате издания, по её возрастанию или убыванию. Дополни код так, чтобы в переменной ascendingReleaseDates получилась отсортированная по возрастанию копия массива releaseDates, а в переменной descendingReleaseDates копия отсортированная по убыванию. */
+
+const releaseDates = [2016, 1967, 2008, 1984, 1973, 2012, 1997];
+// Пиши код ниже этой строки
+
+const ascendingReleaseDates = [...releaseDates].sort();
+
+const descendingReleaseDates = [...releaseDates].sort((a, b) => b-a);
+
+/* ======================== Задача-36 ========================== */
+/* Свой порядок сортировки строк
+Для сортировки строк в алфавитном порядке, по возрастанию или убыванию, используется метод строк localeCompare().
+
+firstString.localeCompare(secondString)
+Он вызывается на строке которую нужно сравнить (firstString) с той, что передана ему как аргумент
+(secondString).
+
+'a'.localeCompare('b'); // -1
+'b'.localeCompare('a'); // 1
+'a'.localeCompare('a'); // 0
+'b'.localeCompare('b'); // 0
+Возвращает отрицательное значение если firstString должна быть перед secondString.
+Возвращает положительное значение больше нуля если firstString должна быть после secondString.
+Если строки одинаковы, возвращается ноль.
+Это удобно использовать при сортировке строк, так как метод sort() ожидает такие же значения от коллбек-функции.
+
+const students = ['Вика', 'Андрей', 'Олег', 'Юля', 'Борис', 'Катя'];
+
+const inAlphabetOrder = [...students].sort((a, b) => a.localeCompare(b));
+console.log(inAlphabetOrder); // ['Андрей', 'Борис', 'Вика', 'Катя', 'Олег', 'Юля']
+
+const inReversedOrder = [...students].sort((a, b) => b.localeCompare(a));
+console.log(inReversedOrder); // ['Юля', 'Олег', 'Катя', 'Вика', 'Борис', 'Андрей']
+Задание
+Онлайн бибилиотеке необходимо отображать книги отсортированные по автору, в алфавитном и обратном алфавитном порядке. Дополни код так, чтобы в переменной authorsInAlphabetOrder получилась отсортированная по алфавиту копия массива authors, а в переменной authorsInReversedOrder копия отсортированная в обратном алфавитном порядке. */
+
+const authors = [
+    'Ли Танит',
+    'Бернард Корнуэлл',
+    'Роберт Шекли',
+    'Федор Достоевский',
+    'Говард Лавкрафт'
+  ];
+  // Пиши код ниже этой строки
+  
+  const authorsInAlphabetOrder = [...authors].sort((a, b) => a.localeCompare(b));
+  
+  const authorsInReversedOrder = [...authors].sort((a, b) => b.localeCompare(a));
+
+/* ======================== Задача-37 ========================== */
+/* Сортировка объектов
+При работе с массивом объектов сортировка выполняется по числовому или строчному значению какого-то свойства. Например, есть группа студентов с баллами за тест. Необходимо отсортировать массив объектов по возрастанию и убыванию количества баллов, и по имени студента.
+
+const students = [
+  { name: 'Манго', score: 83 },
+  { name: 'Поли', score: 59 },
+  { name: 'Аякс', score: 37 },
+  { name: 'Киви', score: 94 },
+];
+
+const inAscendingScoreOrder = students.sort(
+  (firstStudent, secondStudent) => firstStudent.score - secondStudent.score
+);
+
+const inDescendingScoreOrder = students.sort(
+  (firstStudent, secondStudent) => secondStudent.score - firstStudent.score
+);
+
+const inAlphabeticalOrder = students.sort((firstStudent, secondStudent) =>
+  firstStudent.name.localeCompare(secondStudent.name)
+);
+Задание
+Дополни код так, чтобы:
+
+В переменной sortedByAuthorName получился массив книг отсортированный по имени автора в алфавитном порядке.
+В переменной sortedByReversedAuthorName получился массив книг отсортированный по имени автора в обратном алфавитном порядке.
+В переменной sortedByAscendingRating получился массив книг отсортированный по возрастанию рейтинга.
+В переменной sortedByDescentingRating получился массив книг отсортированный по убыванию рейтинга. */
+
+const books = [
+  { title: 'Последнее королевство', author: 'Бернард Корнуэлл', rating: 8.38 },
+  { title: 'На берегу спокойных вод', author: 'Роберт Шекли', rating: 8.51 },
+  { title: 'Сон смешного человека', author: 'Федор Достоевский', rating: 7.75 },
+  { title: 'Красна как кровь', author: 'Ли Танит', rating: 7.94 },
+  { title: 'Враг Божий', author: 'Бернард Корнуэлл', rating: 8.67 }
+];
+// Пиши код ниже этой строки
+
+const sortedByAuthorName = [...books].sort((a, b) => a.author.localeCompare(b.author));
+
+const sortedByReversedAuthorName = [...books].sort((a, b) => b.author.localeCompare(a.author));
+
+const sortedByAscendingRating = [...books].sort((a, b) => a.rating - b.rating);
+
+const sortedByDescentingRating = [...books].sort((a, b) => b.rating - a.rating);
+
+/* ======================== Задача-38 ========================== */
+/* Задача. Сортировка по балансу
+Этот массив объектов мы будем передавать в параметр users при вызове функции из задания.
+Задание
+Дополни функцию sortByAscendingBalance(users) так, чтобы она возвращала массив пользователей отсортированный по возрастанию их баланса (свойство balance). */
+
+// Пиши код ниже этой строки
+const sortByAscendingBalance = users => {
+  return [...users].sort((a, b) => a.balance - b.balance);
+};
+// Пиши код выше этой строки
+
+/* ======================== Задача-39 ========================== */
 /*  */
-/* ======================== Задача-1 ========================== */
-/* ======================== Задача-1 ========================== */
-/* ======================== Задача-1 ========================== */
-/* ======================== Задача-1 ========================== */
-/* ======================== Задача-1 ========================== */
-/* ======================== Задача-1 ========================== */
-/* ======================== Задача-1 ========================== */
-/* ======================== Задача-1 ========================== */
-/* ======================== Задача-1 ========================== */
-/* ======================== Задача-1 ========================== */
-/* ======================== Задача-1 ========================== */
-/* ======================== Задача-1 ========================== */
-/* ======================== Задача-1 ========================== */
-/* ======================== Задача-1 ========================== */
-/* ======================== Задача-1 ========================== */
-/* ======================== Задача-1 ========================== */
-/* ======================== Задача-1 ========================== */
-/* ======================== Задача-1 ========================== */
-/* ======================== Задача-1 ========================== */
-/* ======================== Задача-1 ========================== */
-/* ======================== Задача-1 ========================== */
 /* ======================== Задача-1 ========================== */
 /* ======================== Задача-1 ========================== */
 /* ======================== Задача-1 ========================== */
